@@ -23,7 +23,7 @@ class Threads(threading.Thread):
 
     def run(self):
         print("Commencing " + self.name + "\n")
-        LockingThread.acquire()
+        LockingThread.acquire() #locks the thread and checks if any other thread is locked before it executes the code, this prevents it from running before playgame
         LockingThread.release()
         countdown(self.name, 1, self.increment)
         print("Exiting: " + self.name + "\n")
